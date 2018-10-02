@@ -1,7 +1,15 @@
 <app-header></app-header>
 <div class="container">
-    
-    <button class="btn btn-primary"> Save <i class="far fa-save"></i></button>
+    <div class="row">
+       <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" ><a href="home">Home</a></li>
+            <li role="presentation" ><a href="contacts">Contact</a></li>
+            <li role="presentation" ><a href="about">About</a></li>
+       </ul>
+    </div>
+    <div class="row">
+        <router-outlet></router-outlet>
+    </div>
 
 </div>
 <app-footer></app-footer>
