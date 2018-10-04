@@ -2,9 +2,14 @@
 <div class="container">
     <div class="row">
        <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" ><a href="home">Home</a></li>
-            <li role="presentation" ><a href="contacts">Contact</a></li>
-            <li role="presentation" ><a href="about">About</a></li>
+            <li role="presentation" class="nav-item">
+                <a class="nav-link"
+                   routerLink="/" 
+                   routerLinkActive="active"
+                   [routerLinkActiveOptions]="{exact:true}">Home</a>
+            </li>
+            <li role="presentation" class="nav-item"><a class="nav-link" routerLink="/contacts" routerLinkActive="active">Contact</a></li>
+            <li role="presentation" class="nav-item"><a class="nav-link" routerLink="/about" routerLinkActive="active">About</a></li>
        </ul>
     </div>
     <div class="row">

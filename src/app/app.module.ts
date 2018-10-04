@@ -8,9 +8,14 @@ import { HomeComponent } from './home/home.component';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { NewsListComponent } from './news-list/news-list.component';
+import { NewsListItemComponent } from './news-list/news-list-item/news-list-item.component';
+import { NewsDetailsComponent } from './news-list/news-details/news-details.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent},
+  { path: 'news', component: NewsListComponent},
+  { path: 'news/:id/:title', component: NewsDetailsComponent},
   { path: 'about', component: AboutComponent},
   { path: 'contacts', component: ContactsComponent}
 ];
@@ -22,7 +27,10 @@ const appRoutes: Routes = [
     FooterComponent,
     HomeComponent,
     AboutComponent,
-    ContactsComponent
+    ContactsComponent,
+    NewsListComponent,
+    NewsListItemComponent,
+    NewsDetailsComponent
   ],
   imports: [
     BrowserModule,
