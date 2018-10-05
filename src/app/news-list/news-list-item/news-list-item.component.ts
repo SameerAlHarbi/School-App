@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { NewsModel } from '../news.model';
 
 @Component({
   selector: 'app-news-list-item',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./news-list-item.component.css']
 })
 export class NewsListItemComponent implements OnInit {
+
+  @Input() newsItem: NewsModel;
 
   constructor() { }
 

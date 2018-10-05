@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { NewsModel } from '../news.model';
 
 @Component({
   selector: 'app-news-details',
@@ -9,20 +10,22 @@ import { Subscription } from 'rxjs';
 })
 export class NewsDetailsComponent implements OnInit, OnDestroy {
 
-  news: {id: number, title: string};
+  newsItem: NewsModel;
   paramsSubscription: Subscription;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.news = {
+    this.newsItem = {
       id: this.route.snapshot.params['id'],
-      title: this.route.snapshot.params['title']
+      title: this.route.snapshot.params['title'],
+      date: new Date(2018, 4, 8)
+
     };
     this.paramsSubscription = this.route.params
       .subscribe((params: Params) => {
-        this.news.id = params['id'];
-        this.news.title = params['title'];
+        this.newsItem.id = params['id'];
+        this.newsItem.title = params['title'];
       });
   }
 
@@ -30,5 +33,9 @@ export class NewsDetailsComponent implements OnInit, OnDestroy {
     this.paramsSubscription.unsubscribe();
   }
 
+  editNews() {
+      this.router.navigate(['edit'],
+        {relativeTo: this.route, queryParams: {allowEdit: 'yes'}, fragment: 'Loading'});
+  }
 
 }

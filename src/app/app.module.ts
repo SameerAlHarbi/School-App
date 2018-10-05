@@ -16,8 +16,8 @@ import { EditNewsComponent } from './news-list/edit-news/edit-news.component';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'news', component: NewsListComponent},
-  { path: 'news/:id/:title', component: NewsDetailsComponent},
-  { path: 'news/:id/:title/edit', component: EditNewsComponent},
+  { path: 'news/:id', component: NewsDetailsComponent},
+  { path: 'news/:id/edit', component: EditNewsComponent},
   { path: 'about', component: AboutComponent},
   { path: 'contacts', component: ContactsComponent}
 ];
