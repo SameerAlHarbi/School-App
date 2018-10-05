@@ -11,11 +11,13 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { NewsListComponent } from './news-list/news-list.component';
 import { NewsListItemComponent } from './news-list/news-list-item/news-list-item.component';
 import { NewsDetailsComponent } from './news-list/news-details/news-details.component';
+import { EditNewsComponent } from './news-list/edit-news/edit-news.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'news', component: NewsListComponent},
   { path: 'news/:id/:title', component: NewsDetailsComponent},
+  { path: 'news/:id/:title/edit', component: EditNewsComponent},
   { path: 'about', component: AboutComponent},
   { path: 'contacts', component: ContactsComponent}
 ];
@@ -30,7 +32,8 @@ const appRoutes: Routes = [
     ContactsComponent,
     NewsListComponent,
     NewsListItemComponent,
-    NewsDetailsComponent
+    NewsDetailsComponent,
+    EditNewsComponent
   ],
   imports: [
     BrowserModule,
