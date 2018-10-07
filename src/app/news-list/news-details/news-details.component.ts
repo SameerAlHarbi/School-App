@@ -17,14 +17,14 @@ export class NewsDetailsComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.newsItem = {
-      id: this.route.snapshot.params['id'],
+      id: +this.route.snapshot.params['id'],
       title: this.route.snapshot.params['title'],
       date: new Date(2018, 4, 8)
 
     };
     this.paramsSubscription = this.route.params
       .subscribe((params: Params) => {
-        this.newsItem.id = params['id'];
+        this.newsItem.id = +params['id'];
         this.newsItem.title = params['title'];
       });
   }
@@ -35,7 +35,8 @@ export class NewsDetailsComponent implements OnInit, OnDestroy {
 
   editNews() {
       this.router.navigate(['edit'],
-        {relativeTo: this.route, queryParams: {allowEdit: 'yes'}, fragment: 'Loading'});
+        {relativeTo: this.route,
+          queryParams: {allowEdit: 'yes'}, fragment: 'Loading', queryParamsHandling: 'preserve'});
   }
 
 }

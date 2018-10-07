@@ -1,7 +1,8 @@
 <a [routerLink]="['/news',newsItem.id]"
    [queryParams]="{title:newsItem.title,allowaEdit:1}"
+   routerLinkActive="active"
    fragment="loadeing"
-class="list-group-item list-group-item-action flex-column align-items-start">
+   class="list-group-item list-group-item-action flex-column align-items-start">
   <div class="d-flex w-100 justify-content-between">
     <h5 class="mb-1">{{newsItem.title}}</h5>
     <small>{{newsItem.date | date}}</small>
