@@ -1,4 +1,62 @@
-
-		
-		
-	
+/* Create a sticky/fixed navbar */
+#navbar {
+    overflow: hidden;
+    background-color: #979797;
+    padding: 40px 100px; /* Large padding which will shrink on scroll (using JS) */
+    transition: 0.4s; /* Adds a transition effect when the padding is decreased */
+    position: center; /* Sticky/fixed navbar */
+    width: 100%;
+    top: 5; /* At the top */
+    z-index: 99; 
+  }
+  
+  /* Style the navbar links */
+  #navbar a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    font-size: 18px; 
+    line-height: 25px;
+    border-radius: 4px;
+  }
+  
+  /* Style the logo */
+  #navbar #logo {
+    font-size: 35px;
+    font-weight: bold;
+    transition: 0.4s;
+  }
+  
+  /* Links on mouse-over */
+  #navbar a:hover {
+    background-color: rgb(240, 171, 116);
+    color: black;
+  }
+  
+  /* Style the active/current link */
+  #navbar a.active {
+    background-color: rgb(240, 171, 116);
+    color: white;
+  }
+  
+  /* Display some links to the right */
+  #navbar-right {
+    float: center;
+  }
+  
+  /* Add responsiveness - on screens less than 580px wide, display the navbar vertically instead of horizontally */
+  @media screen and (max-width: 580px) {
+    #navbar {
+      padding: 20px 10px !important; /* Use !important to make sure that JavaScript doesn't override the padding on small screens */
+    }
+    #navbar a {
+      float: center;
+      display: block;
+      text-align: left;
+    }
+    #navbar-center {
+      float: center;
+    }
+  }
