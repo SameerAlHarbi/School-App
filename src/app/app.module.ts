@@ -7,12 +7,13 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactsComponent } from './contacts/contacts.component';
-import { NewsListComponent } from './news-list/news-list.component';
-import { NewsListItemComponent } from './news-list/news-list-item/news-list-item.component';
-import { NewsDetailsComponent } from './news-list/news-details/news-details.component';
-import { EditNewsComponent } from './news-list/edit-news/edit-news.component';
+import { NewsListComponent } from './news/news-list/news-list.component';
+import { NewsListItemComponent } from './news/news-list/news-list-item/news-list-item.component';
+import { NewsDetailsComponent } from './news/news-details/news-details.component';
+import { EditNewsComponent } from './news/edit-news/edit-news.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AppRoutingModule } from './app-routing.module';
+import { NewsComponent } from './news/news.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AppRoutingModule } from './app-routing.module';
     NewsListItemComponent,
     NewsDetailsComponent,
     EditNewsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
